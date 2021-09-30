@@ -1,5 +1,5 @@
 <mat-toolbar>
   <nav>
-    <a mat-button [routerLink]="['home']">Home</a>
+    <a *ngFor="let link of navLinks" mat-button [routerLink]="[link.path]">{{link.name}}</a>
   </nav>
 </mat-toolbar>
