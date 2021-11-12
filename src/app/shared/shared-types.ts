@@ -3,4 +3,4 @@ export interface NavigationItem {
   path: string
 }
 
-type Page = 'Home' | 'Test'
+type Page = 'Home' | 'Test' | 'Timeline'

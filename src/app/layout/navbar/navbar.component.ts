@@ -9,6 +9,7 @@ import { NavigationItem } from 'src/app/shared/shared-types';
 export class NavbarComponent {
   public navLinks: NavigationItem[] = [
     {name: 'Home', path: 'home'},
+    {name: 'Timeline', path: 'timeline'}
   ]
 
   constructor() { }
