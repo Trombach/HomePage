@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { Routes } from '@angular/router';
-import { TimelineComponent } from './timeline/timeline.component';
+import { TimelinePageComponent } from './timeline-page/timeline-page.component';
 
 const routes: Routes = [
-  {path: '', component: TimelineComponent}
+  {path: '', component: TimelinePageComponent}
 ]
 
 @NgModule({

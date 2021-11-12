@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TimelineComponent } from './timeline/timeline.component';
+import { TimelinePageComponent } from './timeline-page/timeline-page.component';
 import { TimelineHeaderComponent } from './timeline-header/timeline-header.component';
 import { TimelineItemComponent } from './timeline-item/timeline-item.component';
 import { TimelineRoutingModule } from './timeline-routing.module';
@@ -9,7 +9,7 @@ import { TimelineRoutingModule } from './timeline-routing.module';
 
 @NgModule({
   declarations: [
-    TimelineComponent,
+    TimelinePageComponent,
     TimelineHeaderComponent,
     TimelineItemComponent
   ],
