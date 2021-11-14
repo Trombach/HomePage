@@ -1,0 +1,12 @@
+@mixin theme($theme) {
+  app-navbar {
+    nav {
+      a:hover, a:focus {
+        background: rgba(0, 0, 0, 0.4)
+      }
+      .navbar-link-selected {
+        background: rgba(0, 0, 0, 0.2)
+      }
+    }
+  }
+}

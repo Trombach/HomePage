@@ -1,5 +1,12 @@
 <mat-toolbar>
   <nav>
-    <a *ngFor="let link of navLinks" mat-button [routerLink]="[link.path]">{{link.name}}</a>
+    <a
+      *ngFor="let link of navLinks"
+      mat-button
+      color="primary"
+      [routerLink]="[link.path]"
+      routerLinkActive="navbar-link-selected"
+      >{{ link.name }}</a
+    >
   </nav>
 </mat-toolbar>

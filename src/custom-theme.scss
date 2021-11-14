@@ -1,7 +1,10 @@
+@use "sass:map";
+@use "src/app/app-theme";
+@use "src/app/layout/navbar/navbar-theme";
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -17,28 +20,49 @@ $light-accent: mat.define-palette(mat.$blue-grey-palette, 300);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$light-theme: mat.define-light-theme((
-  color: (
-    primary: $light-primary,
-    accent: $light-accent
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $light-primary,
+      accent: $light-accent,
+    ),
   )
-));
+);
 
 $dark-primary: mat.define-palette(mat.$teal-palette, 500);
 $dark-accent: mat.define-palette(mat.$blue-grey-palette, 600);
 
-$dark-theme: mat.define-dark-theme((
-  color: (
-    primary: $dark-primary,
-    accent: $dark-accent
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+    ),
   )
-));
+);
+
+@mixin get-includes($theme) {
+  @include mat.core-theme($theme);
+  @include mat.button-theme($theme);
+  @include mat.toolbar-theme($theme);
+  @include app-theme.theme($theme);
+  @include navbar-theme.theme($theme);
+}
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($light-theme);
+@include get-includes($dark-theme);
 
+@media (prefers-color-scheme: light) {
+  @include get-includes($light-theme);
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
